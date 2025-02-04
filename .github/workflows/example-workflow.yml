@@ -6,12 +6,6 @@ on:
 
 jobs:
   run-java-app:
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        
-      - name: Call the reusable action
-        uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
-        with:
-          args: 'func --input="./examples/func/loop-cell-overflow.fc" --func-std="./examples/stdlib.fc" --fift-std="./examples/fiftstdlib"'
+    uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
+    with:
+         args: 'func --input="./examples/func/loop-cell-overflow.fc" --func-std="./examples/stdlib.fc" --fift-std="./examples/fiftstdlib"'

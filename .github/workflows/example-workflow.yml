@@ -9,6 +9,6 @@ jobs:
         uses: actions/checkout@v4
         
       - name: Call the reusable action
-        uses: ./.github/workflows/tsa-general.yml
+        uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
         with:
           args: 'func --input="./examples/func/loop-cell-overflow.fc" --func-std="./examples/stdlib.fc" --fift-std="./examples/fiftstdlib"'

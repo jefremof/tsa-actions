@@ -1,0 +1,16 @@
+on:
+    workflow_call:
+      inputs:
+        args:
+          required: true
+          type: string
+
+jobs:
+  run-tsa-cli:
+    runs-on: ubuntu-22.04
+    container: 
+      image: explyt/tsa-env:roadmap-4
+
+    steps:
+      - name: Run TON symbolic analyzer CLI
+        run: java -jar /home/tsa.jar ${{ inputs.args }}

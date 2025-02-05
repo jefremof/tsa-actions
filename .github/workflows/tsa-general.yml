@@ -21,6 +21,6 @@ jobs:
           run: java -jar /home/tsa.jar ${{ inputs.args }} > output.sarif
 
         - name: Upload SARIF report
-          uses: GitHub/codeql-action/upload-sarif@v2
+          uses: GitHub/codeql-action/upload-sarif@v3
           with:
             sarif_file: output.sarif

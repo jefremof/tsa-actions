@@ -7,11 +7,11 @@ on:
 
 jobs:
   run-tsa-cli:
+    runs-on: ubuntu-22.04
     permissions:
       security-events: write
       actions: read
       contents: read
-    runs-on: ubuntu-22.04
     container: 
       image: explyt/tsa-env:roadmap-4
 

@@ -6,6 +6,10 @@ on:
 
 jobs:
   run-java-app:
+    permissions:
+        security-events: write
+        actions: read
+        contents: read
     uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
     with:
-         args: 'func --input="./examples/func/loop-cell-overflow.fc" --func-std="./examples/stdlib.fc" --fift-std="./examples/fiftstdlib"'
+        args: 'func --input="./examples/func/loop-cell-overflow.fc" --func-std="./examples/stdlib.fc" --fift-std="./examples/fiftstdlib"'

@@ -6,6 +6,7 @@ The examples in the [examples](./examples/) directory are taken from the TSA rep
 
 ## Roadmap
 -   [x] **Set up project**
+-   [ ] Implement source mapping for Tact
 -   [ ] FunC analysis job
 -   [ ] Tact analysis job
 -   [ ] **Review planned**

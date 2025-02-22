@@ -1,4 +1,4 @@
-# TON Symbolic Analyser reusable Github Actions
+# TON Symbolic Analyzer reusable Github Actions
 
 This repository contains reusable workflows that enable the execution of [TON Symbolic Analyzer (TSA)](https://github.com/explyt/ton-bounties) within GitHub Actions. This workflows facilitate the display of TSA results in SARIF format in your GitHub repository.
 

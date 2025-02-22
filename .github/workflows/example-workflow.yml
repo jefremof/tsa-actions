@@ -12,4 +12,4 @@ jobs:
         contents: read
     uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
     with:
-        args: 'func --input="./examples/func/loop-cell-overflow.fc" --func-std="./examples/stdlib.fc" --fift-std="./examples/fiftstdlib"'
+        args: 'tact -c "./examples/tact/tact.config.json" -p "sample" -i "Divider"'

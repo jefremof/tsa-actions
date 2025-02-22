@@ -12,8 +12,8 @@ jobs:
       security-events: write
       actions: read
       contents: read
-    container: 
-      image: explyt/tsa-env:roadmap-4
+    container:
+      image: ghcr.io/jefremof/tsa/tsa-physical-locations:latest
 
     steps:
         - name: 'Checkout repository'

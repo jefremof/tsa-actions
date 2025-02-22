@@ -7,6 +7,7 @@ The examples in the [examples](./examples/) directory are taken from the TSA rep
 ## Roadmap
 -   [x] **Set up project**
 -   [x] Implement source mapping for Tact
+-   [ ] TSA docker containers with patched compilers
 -   [ ] FunC analysis job
 -   [ ] Tact analysis job
 -   [ ] Disable additional gas consumption
@@ -40,9 +41,6 @@ tsa-actions/
 
 ### Tact Analysis
 [tsa-tact-analysis.yml](./.github/workflows/tsa-tact-analysis.yml)
-
-- `tact_source` - the path to the Tact source of the smart contract.
-- `contract_data` (optional) - the serialized contract persistent data.
 
 ### FunC Analysis
 [tsa-func-analysis.yml](./.github/workflows/tsa-func-analysis.yml)

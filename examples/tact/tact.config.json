@@ -2,7 +2,7 @@
     "projects": [{
         "name": "sample",
         "path": "./path-sensitive-division.tact",
-        "output": "./output",
+        "output": "./output/sample",
         "mode": "full",
         "options": {
             "external": false,
@@ -14,5 +14,22 @@
             }
         },
         "debugInfo": false
-    }]
+    },
+    {
+        "name": "overflow",
+        "path": "./integer-overflow.tact",
+        "output": "./output/overflow",
+        "mode": "full",
+        "options": {
+            "external": false,
+            "debug": false,
+            "ipfsAbiGetter": false,
+            "interfacesGetter": false,
+            "experimental": {
+                "inline": false
+            }
+        },
+        "debugInfo": false
+    }
+    ]
 }

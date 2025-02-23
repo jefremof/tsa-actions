@@ -32,3 +32,4 @@ jobs:
           uses: GitHub/codeql-action/upload-sarif@v3
           with:
             sarif_file: output-${{ env.HASH }}.sarif
+            category: ${{ inputs.args }}

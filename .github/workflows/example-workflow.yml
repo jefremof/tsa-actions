@@ -30,7 +30,7 @@ jobs:
         project_name: 'overflow'
         contract_name: 'Overflow'
     
-  analyze-func:
+  analyze-func-cell-overflow:
     permissions:
         security-events: write
         actions: read
@@ -38,5 +38,29 @@ jobs:
     uses: jefremof/tsa-actions/.github/workflows/tsa-func-analysis.yml@main
     with:
         func_source: './examples/func/loop-cell-overflow.fc'
+        fift_stdlib: './examples/fiftstdlib'
+        func_stdlib: './examples/stdlib.fc'
+    
+    
+  analyze-func-cell-underflow:
+    permissions:
+        security-events: write
+        actions: read
+        contents: read
+    uses: jefremof/tsa-actions/.github/workflows/tsa-func-analysis.yml@main
+    with:
+        func_source: './examples/func/path-sensitive-cell-underflow.fc'
+        fift_stdlib: './examples/fiftstdlib'
+        func_stdlib: './examples/stdlib.fc'
+    
+    
+  analyze-func-int-overflow:
+    permissions:
+        security-events: write
+        actions: read
+        contents: read
+    uses: jefremof/tsa-actions/.github/workflows/tsa-func-analysis.yml@main
+    with:
+        func_source: './examples/func/path-sensitive-int-overflow.fc'
         fift_stdlib: './examples/fiftstdlib'
         func_stdlib: './examples/stdlib.fc'

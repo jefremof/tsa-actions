@@ -22,7 +22,7 @@ jobs:
             submodules: recursive
 
         - name: Run TON symbolic analyzer CLI
-          run: java -jar /home/tsa.jar ${{ inputs.args }} > output.sarif
+          run: java -jar /home/tsa.jar ${{ inputs.args }} > output-${{ github.run_id }}.sarif
 
         - name: Upload SARIF report
           uses: GitHub/codeql-action/upload-sarif@v3

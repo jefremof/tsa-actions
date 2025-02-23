@@ -1,0 +1,21 @@
+on:
+    workflow_call:
+      inputs:
+        func_source:
+          required: true
+          type: string
+        fift_stdlib:
+          required: true
+          type: string
+        func_stdlib:
+          required: true
+          type: string
+        contract_data:
+          required: false
+          type: string
+  
+  jobs:
+    call-run-tsa-cli:
+      uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
+      with:
+        args: "func -i ${{ inputs.func_source }} --fift-std ${{ inputs.fift_stdlib }} --func-std ${{ inputs.func_stdlib }} ${{ inputs.contract_data && '-d' || ''}} ${{inputs.contract_data}}"

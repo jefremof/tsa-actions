@@ -21,12 +21,13 @@ jobs:
           with:
             submodules: recursive
 
+        - name: Set up timestamp
+          run: echo "TIMESTAMP=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+
         - name: Run TON symbolic analyzer CLI
-          run: |
-            TIMESTAMP=$(date +%Y%m%d%H%M%S)
-            java -jar /home/tsa.jar ${{ inputs.args }} > output-${TIMESTAMP}.sarif
+          run: java -jar /home/tsa.jar ${{ inputs.args }} > output-${{ env.TIMESTAMP }}.sarif
 
         - name: Upload SARIF report
           uses: GitHub/codeql-action/upload-sarif@v3
           with:
-            sarif_file: output-${TIMESTAMP}.sarif
+            sarif_file: output-${{ env.TIMESTAMP }}.sarif

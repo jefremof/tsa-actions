@@ -49,19 +49,52 @@ tsa-actions/
 ### General
 [tsa-general.yml](./.github/workflows/tsa-general.yml)
 
+**Arguments**
 - `args` - the string containing any set of arguments. Passed to the TSA without any changes.
+
+**Usage example**
+```yaml
+jobs:
+  run-java-app:
+    permissions:
+        security-events: write
+        actions: read
+        contents: read
+    uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
+    with:
+        args: 'tact -c "./examples/tact/tact.config.json" -p "sample" -i "Divider"'
+```
 
 > The `args` line is also used as SARIF report categories to distinguish them from one another. \
 > https://github.blog/changelog/2024-05-06-code-scanning-will-stop-combining-runs-from-a-single-upload/
 
+##
 
 ### Tact Analysis
 [tsa-tact-analysis.yml](./.github/workflows/tsa-tact-analysis.yml)
 
+**Arguments**
 - `tact_config` - the path to the Tact config (tact.config.json).
 - `project_name` - the name of the Tact project to analyze.
 - `contract_name` - the name of the Tact smart contract to analyze.
 - `contract_data` (optional) - the serialized contract persistent data.
+
+**Usage example**
+```yaml
+jobs:
+  analyze-divider:
+    permissions:
+        security-events: write
+        actions: read
+        contents: read
+    uses: jefremof/tsa-actions/.github/workflows/tsa-tact-analysis.yml@main
+    with:
+        tact_config: './examples/tact/tact.config.json'
+        project_name: 'sample'
+        contract_name: 'Divider'
+```
+
+##
 
 ### FunC Analysis
 [tsa-func-analysis.yml](./.github/workflows/tsa-func-analysis.yml)

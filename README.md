@@ -2,7 +2,13 @@
 
 This repository contains reusable workflows that enable the execution of [TON Symbolic Analyzer (TSA)](https://github.com/explyt/ton-bounties) within GitHub Actions. This workflows facilitate the display of TSA results in SARIF format in your GitHub repository.
 
-The examples in the [examples](./examples/) directory contains some examples from the TSA repository itself.
+The findings can be observed in the Security "Code Scanning" tab. Also, they are displayed in the merge request conversation.
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/1c390ae5-5078-4355-a9f4-a848695ebf0a" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/da21e3e1-197e-4ec1-a67c-926ed7a7f0ed" />
+
+##
+The [example directory](./examples/) contains some examples from the [TSA repository](https://github.com/explyt/ton-bounties) itself.
 
 ## Roadmap
 -   [x] **Set up project**

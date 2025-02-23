@@ -28,3 +28,5 @@ jobs:
           uses: GitHub/codeql-action/upload-sarif@v3
           with:
             sarif_file: output-${{ github.run_id }}.sarif
+        
+        - run: echo ${{ github.run_id }}

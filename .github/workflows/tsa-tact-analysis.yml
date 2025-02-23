@@ -15,18 +15,7 @@ on:
         type: string
 
 jobs:
-  run-tact-analysis:
-    runs-on: ubuntu-22.04
-    steps:
-        - name: Set up args
-          run: |
-            args="tact -c ${{ inputs.tact_config }} -i ${{ inputs.contract_name }} -p ${{ inputs.project_name }}"
-            if [ -n "${{ inputs.contract_data }}" ]; then
-                args="$args -d '${{ inputs.contract_data }}'"
-            fi
-            echo "args=$args" >> $GITHUB_ENV
-
-        - name: Call run-tsa-cli
-          uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
-          with:
-            args: ${{ env.args }}
+  call-run-tsa-cli:
+    uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
+    with:
+      args: "tact -c '${{ inputs.tact_config }}' -i '${{ inputs.contract_name }}' -p '${{ inputs.project_name }}' ${{  inputs.contract_data && \"-d '${{ inputs.contract_data }}'\"  }}"

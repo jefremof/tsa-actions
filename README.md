@@ -21,16 +21,18 @@ The examples in the [examples](./examples/) directory are taken from the TSA rep
 ```
 tsa-actions/
 ├── .github/
-│   ├── workflows/
-│   │   ├── tsa-general.yml
-│   │   ├── tsa-func-analysis.yml
-│   │   ├── tsa-tact-analysis.yml
-│   │   └── example-workflow.yml     # An example workflow that uses the reusable workflows
+│   └── workflows/
+│       ├── tsa-general.yml
+│       ├── tsa-func-analysis.yml
+│       ├── tsa-tact-analysis.yml
+│       └── example-workflow.yml     # An example workflow that uses the reusable workflows
 ├── examples
 │   ├── fiftstdlib/
 │   ├── stdlib.fc
 │   ├── func/loop-cell-overflow.fc
-│   └── tact/path-sensitive-division.tact
+│   └── tact/
+|       ├── path-sensitive-division.tact
+|       └── tact.config.json
 └── README.md
 ```
 
@@ -43,6 +45,11 @@ tsa-actions/
 
 ### Tact Analysis
 [tsa-tact-analysis.yml](./.github/workflows/tsa-tact-analysis.yml)
+
+- `tact_config` - the path to the Tact config (tact.config.json).
+- `project_name` - the name of the Tact project to analyze.
+- `contract_name` - the name of the Tact smart contract to analyze.
+- `contract_data` (optional) - the serialized contract persistent data.
 
 ### FunC Analysis
 [tsa-func-analysis.yml](./.github/workflows/tsa-func-analysis.yml)

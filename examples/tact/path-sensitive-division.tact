@@ -28,6 +28,5 @@ contract Divider {
     }
 
     return dividend / divider;
-
   }
 }

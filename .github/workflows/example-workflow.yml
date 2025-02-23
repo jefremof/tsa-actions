@@ -8,16 +8,16 @@ on:
     workflow_dispatch:
 
 jobs:
-#   analyze-divider:
-#     permissions:
-#         security-events: write
-#         actions: read
-#         contents: read
-#     uses: jefremof/tsa-actions/.github/workflows/tsa-tact-analysis.yml@main
-#     with:
-#         tact_config: './examples/tact/tact.config.json'
-#         project_name: 'sample'
-#         contract_name: 'Divider'
+  analyze-divider:
+    permissions:
+        security-events: write
+        actions: read
+        contents: read
+    uses: jefremof/tsa-actions/.github/workflows/tsa-tact-analysis.yml@main
+    with:
+        tact_config: './examples/tact/tact.config.json'
+        project_name: 'sample'
+        contract_name: 'Divider'
 
   analyze-overflow:
     permissions:

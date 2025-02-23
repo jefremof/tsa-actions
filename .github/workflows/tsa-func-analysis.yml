@@ -14,8 +14,8 @@ on:
           required: false
           type: string
   
-  jobs:
-    call-run-tsa-cli:
-      uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
-      with:
-        args: "func -i ${{ inputs.func_source }} --fift-std ${{ inputs.fift_stdlib }} --func-std ${{ inputs.func_stdlib }} ${{ inputs.contract_data && '-d' || ''}} ${{inputs.contract_data}}"
+jobs:
+  call-run-tsa-cli:
+    uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
+    with:
+      args: "func -i ${{ inputs.func_source }} --fift-std ${{ inputs.fift_stdlib }} --func-std ${{ inputs.func_stdlib }} ${{ inputs.contract_data && '-d' || ''}} ${{inputs.contract_data}}"

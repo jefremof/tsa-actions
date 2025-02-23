@@ -23,6 +23,9 @@ contract Divider {
       divider = 2;
     }
 
+    if (dividend == 100) {
+      throw(100);
+    }
 
     return dividend / divider;
 

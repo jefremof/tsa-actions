@@ -2,7 +2,7 @@
 
 This repository contains reusable workflows that enable the execution of [TON Symbolic Analyzer (TSA)](https://github.com/explyt/ton-bounties) within GitHub Actions. This workflows facilitate the display of TSA results in SARIF format in your GitHub repository.
 
-The examples in the [examples](./examples/) directory are taken from the TSA repository itself.
+The examples in the [examples](./examples/) directory contains some examples from the TSA repository itself.
 
 ## Roadmap
 -   [x] **Set up project**
@@ -10,9 +10,10 @@ The examples in the [examples](./examples/) directory are taken from the TSA rep
 -   [x] TSA docker containers with patched compilers
 -   [x] **Test Sarif uploading**
 -   [ ] FunC analysis job
--   [ ] Tact analysis job
+-   [x] Tact analysis job
 -   [ ] Filter flaws
 -   [ ] Disable additional gas consumption
+-   [ ] Provide more examples
 -   [ ] **Review planned**
 -   [ ] Interaction analysis (?)
 
@@ -31,6 +32,7 @@ tsa-actions/
 │   ├── stdlib.fc
 │   ├── func/loop-cell-overflow.fc
 │   └── tact/
+|       ├── integer-overflow.tact
 |       ├── path-sensitive-division.tact
 |       └── tact.config.json
 └── README.md
@@ -42,6 +44,10 @@ tsa-actions/
 [tsa-general.yml](./.github/workflows/tsa-general.yml)
 
 - `args` - the string containing any set of arguments. Passed to the TSA without any changes.
+
+> The `args` line is also used as SARIF report categories to distinguish them from one another. \
+> https://github.blog/changelog/2024-05-06-code-scanning-will-stop-combining-runs-from-a-single-upload/
+
 
 ### Tact Analysis
 [tsa-tact-analysis.yml](./.github/workflows/tsa-tact-analysis.yml)

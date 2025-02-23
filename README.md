@@ -7,9 +7,11 @@ The examples in the [examples](./examples/) directory are taken from the TSA rep
 ## Roadmap
 -   [x] **Set up project**
 -   [x] Implement source mapping for Tact
--   [ ] TSA docker containers with patched compilers
+-   [x] TSA docker containers with patched compilers
+-   [x] **Test Sarif uploading**
 -   [ ] FunC analysis job
 -   [ ] Tact analysis job
+-   [ ] Filter flaws
 -   [ ] Disable additional gas consumption
 -   [ ] **Review planned**
 -   [ ] Interaction analysis (?)

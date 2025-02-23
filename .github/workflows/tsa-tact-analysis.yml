@@ -18,4 +18,4 @@ jobs:
   call-run-tsa-cli:
     uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
     with:
-      args: "tact -c '${{ inputs.tact_config }}' -i '${{ inputs.contract_name }}' -p '${{ inputs.project_name }}' ${{  inputs.contract_data && \"-d '${{ inputs.contract_data }}'\"  }}"
+      args: "tact -c ${{ inputs.tact_config }} -i ${{ inputs.contract_name }} -p ${{ inputs.project_name }} ${{ inputs.contract_data && '-d' || ''}} ${{inputs.contract_data}}"

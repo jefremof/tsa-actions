@@ -1,0 +1,32 @@
+on:
+  workflow_call:
+    inputs:
+      tact_config:
+        required: true
+        type: string
+      project_name:
+        required: true
+        type: string
+      contract_name:
+        required: true
+        type: string
+      contract_data:
+        required: false
+        type: string
+
+jobs:
+  run-tact-analysis:
+    runs-on: ubuntu-22.04
+    steps:
+        - name: Set up args
+          run: |
+            args="tact -c ${{ inputs.tact_config }} -i ${{ inputs.contract_name }} -p ${{ inputs.project_name }}"
+            if [ -n "${{ inputs.contract_data }}" ]; then
+                args="$args -d '${{ inputs.contract_data }}'"
+            fi
+            echo "args=$args" >> $GITHUB_ENV
+
+        - name: Call run-tsa-cli
+          uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
+          with:
+            args: ${{ env.args }}

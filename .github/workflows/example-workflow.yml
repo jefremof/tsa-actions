@@ -13,6 +13,8 @@ jobs:
         security-events: write
         actions: read
         contents: read
-    uses: jefremof/tsa-actions/.github/workflows/tsa-general.yml@main
+    uses: jefremof/tsa-actions/.github/workflows/tsa-tact-analysis.yml@main
     with:
-        args: 'tact -c "./examples/tact/tact.config.json" -p "sample" -i "Divider"'
+        tact_config: './examples/tact/tact.config.json'
+        project_name: 'sample'
+        contract_name: 'Divider'
